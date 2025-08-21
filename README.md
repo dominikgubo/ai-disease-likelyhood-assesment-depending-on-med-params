@@ -4,16 +4,18 @@ Script is used for initial disease likelyhood assesment depending on the availab
 
 Specifically this project focuses on hematology area of medicine, although it is fairly-easy adjustable for other medicine areas; given that you have proper data for it.
 
-It is **quite important** to mention that assesment precision of this initial code is rough, more of a 'stepping-stone', and definitely won't be used as main diagnosis criteria further on. My team and myself are quite aware of the assesment limitations of this approach, and in regards to this;
+It is **quite important** to mention that assesment precision of this initial code is rough, more of a 'stepping-stone', and definitely won't be used as main diagnosis criteria further on. My team and myself are quite aware of the assesment limitations of this approach (e.g. each time script is ran different results received), and in regards to this;
 1) upgraded data driven approach is used privately
 2) for best precision medical staff is looking once more through output data and filtering it
 
+  
 ## Workflow
 
 Disease and available medical parameter data is loaded in the project and each separate disease is assesed via ChatGPT API iteratively, achieving greater precision. Used AI model is ```gpt-4o-mini```, with temperature parameter set to "0.0" resulting in strict & predictable data. Input Data is in specific .csv format loaded, scraped from [NHANES (medical parameters)](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory) and [ICD datasources (disease clarification)](https://icd.who.int/browse/2025-01/mms/en). 
 
 After each assesment output is generated in ```out/results_all.csv, results_not_possible.csv, results_possible```. Specifically basic disease data is stored and medical reasoning behind the approach (depending of likelyhood possibility state).
 
+  
 ## Usage
 1) Install required Python dependencies
 2) Use existing or modify input data (```icd_codes.csv, nhanes_variables.csv```)
@@ -22,6 +24,7 @@ After each assesment output is generated in ```out/results_all.csv, results_not_
    a) Windows =>```setx OPENAI_API_KEY "<your_api_key>"```  
    b) Linux or macOs => ```export OPENAI_API_KEY="<your_api_key>"```
 
+  
 ## Output result example
 
 | Code    | Parent Code | Name                                                        | Possibility   | Medical Reasoning                                                                                                                                                                                                                                                                           |
@@ -32,6 +35,7 @@ After each assesment output is generated in ```out/results_all.csv, results_not_
 
 [**View full data**](./out/results_all.csv)
 
+  
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
