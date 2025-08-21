@@ -1,0 +1,60 @@
+Variable name,Source,Analyte,Units
+SEQN,ALL (KEY),Respondent sequence number,N°
+RIAGENDR,DEMO,Gender,"1 = Man, 2 = Woman"
+RIDAGEYR,DEMO,Age,Years
+LBXWBCSI,CBC,White blood cell count,10³ cells/uL
+LBXLYPCT,CBC,Lymphocyte percent,%
+LBXMOPCT,CBC,Monocyte percent,%
+LBXNEPCT,CBC,Segmented neutrophils percent,%
+LBXEOPCT,CBC,Eosinophils percent,%
+LBXBAPCT,CBC,Basophils percent,%
+LBDLYMNO,CBC,Lymphocyte number,10³ cells/uL
+LBDMONO,CBC,Monocyte number,10³ cells/uL
+LBDNENO,CBC,Segmented neutrophils number,10³ cells/uL
+LBDEONO,CBC,Eosinophils number,10³ cells/uL
+LBDBANO,CBC,Basophils number,10³ cells/uL
+LBXRBCSI,CBC,Red blood cell count,10⁶ cells/uL
+LBXHGB,CBC,Hemoglobin,g/dL
+LBXHCT,CBC,Hematocrit,%
+LBXMCVSI,CBC,Mean cell volume,fL
+LBXMCHSI,CBC,Mean cell hemoglobin,pg
+LBXMC,CBC,Mean cell hemoglobin concentration,g/dL
+LBXRDW,CBC,Red cell distribution width,%
+LBXPLTSI,CBC,Platelet count,10³ cells/uL
+LBXMPSI,CBC,Mean platelet volume,fL
+LBXSAL,BIOPRO,Albumin,g/dL
+LBDSALSI,BIOPRO,Albumin,g/L
+LBXSATSI,BIOPRO,Alanine aminotransferase (ALT),U/L
+LBXSASSI,BIOPRO,Asparate aminotransferase (AST),U/L
+LBXSAPSI,BIOPRO,Alkaline phosphotase,U/L
+LBXSBU,BIOPRO,Blood urea nitrogen,mg/dL
+LBXSCA,BIOPRO,Total calcium,mg/dL
+LBDSCASI,BIOPRO,Total calcium,mmol/L
+LBDSBUSI,BIOPRO,Blood urea nitrogen,mmol/L
+LBXSCH,BIOPRO,Cholesterol,mg/dL
+LBDSCHSI,BIOPRO,Cholesterol,mmol/L
+LBXSC3SI,BIOPRO,Bicarbonate,mmol/L
+LBXSCR,BIOPRO,Creatinine,mg/dL
+LBDSCRSI,BIOPRO,Creatinine,µmol/L
+LBXSGTSI,BIOPRO,Gamma glutamyl transferase,U/L
+LBXSGL,BIOPRO,"Glucose, serum",mg/dL
+LBDSGLSI,BIOPRO,"Glucose, serum",mmol/L
+LBXSIR,BIOPRO,"Iron, refigerated",ug/dL
+LBDSIRSI,BIOPRO,"Iron, refigerated",umol/L
+LBXSLDSI,BIOPRO,Lactate dehydrogenase LDH,U/L
+LBXSPH,BIOPRO,Phosphorus,mg/dL
+LBDSPHSI,BIOPRO,Phosphorus,mmol/L
+LBXSTB,BIOPRO,Total bilirubin,mg/dL
+LBDSTBSI,BIOPRO,"Bilirubin, total",umol/L
+LBXSTP,BIOPRO,Total protein,g/dL
+LBDSTPSI,BIOPRO,Total protein,g/L
+LBXSTR,BIOPRO,Triglycerides,mg/dL
+LBDSTRSI,BIOPRO,Triglycerides,mmol/L
+LBXSUA,BIOPRO,Uric acid,mg/dL
+LBDSUASI,BIOPRO,Uric acid,umol/L
+LBXSNASI,BIOPRO,Sodium,mmol/L
+LBXSKSI,BIOPRO,Potassium,mmol/L
+LBXSCLSI,BIOPRO,Chloride,mmol/L
+LBXSOSSI,BIOPRO,Osmolality,mmol/Kg
+LBXSGB,BIOPRO,Globulin,g/dL
+LBDSGBSI,BIOPRO,Globulin,g/L
