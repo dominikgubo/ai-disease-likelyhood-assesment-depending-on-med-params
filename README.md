@@ -11,7 +11,7 @@ It is **quite important** to mention that assesment precision of this initial co
   
 ## Workflow
 
-Disease and available medical parameter data is loaded in the project and each separate disease is assesed via ChatGPT API iteratively, achieving greater precision. Used AI model is ```gpt-4o-mini```, with temperature parameter set to "0.0" resulting in strict & predictable data. Input Data is in specific .csv format loaded, scraped from [NHANES (medical parameters)](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory) and [ICD datasources (disease clarification)](https://icd.who.int/browse/2025-01/mms/en). 
+Disease and available medical parameter data is loaded in the project and each separate disease is assesed via ChatGPT API iteratively, achieving greater precision. Used AI model is ```gpt-4o-mini``` (might be a subject of change further on), with temperature parameter set to "0.0" resulting in strict & predictable data. Input Data is in specific .csv format loaded, scraped from [NHANES (medical parameters)](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory) and [ICD datasources (disease clarification)](https://icd.who.int/browse/2025-01/mms/en). 
 
 After each assesment output is generated in ```out/results_all.csv, results_not_possible.csv, results_possible```. Specifically basic disease data is stored and medical reasoning behind the approach (depending of likelyhood possibility state).
 
