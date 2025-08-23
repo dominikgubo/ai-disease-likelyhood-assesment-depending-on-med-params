@@ -2,9 +2,9 @@ import os
 
 # -- Pathing and inner script functionality --
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-NHANES_CSV = os.path.join(SCRIPT_DIR, "nhanes_variables.csv")
-ICD_CSV = os.path.join(SCRIPT_DIR, "icd_codes.csv")
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "out")
+NHANES_CSV_PATH = os.path.join(SCRIPT_DIR, "input/nhanes_variables.csv")
+ICD_CSV_PATH = os.path.join(SCRIPT_DIR, "input/icd_codes.csv")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
 # DISEASE_SCOPE_LIMIT if value is present processes first variable value number of ICD diseases
 # e.g. DISEASE_SCOPE_LIMIT = 20 would process first 20 ICD diseases in the .csv input file
 DISEASE_SCOPE_LIMIT = None

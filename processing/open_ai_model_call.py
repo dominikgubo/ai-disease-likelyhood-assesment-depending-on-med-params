@@ -1,6 +1,6 @@
 import time
 
-from response_parser import parse_model_output
+from processing.response_parser import parse_model_output
 
 try:
     from openai import OpenAI
