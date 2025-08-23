@@ -11,20 +11,22 @@ It is **quite important** to mention that assesment precision of this initial co
   
 ## Workflow
 
-Disease and available medical parameter data is loaded in the project and each separate disease is assesed via ChatGPT API iteratively, achieving greater precision. Used AI model is ```gpt-4o-mini```, with temperature parameter set to "0.0" resulting in strict & predictable data. Input Data is in specific .csv format loaded, scraped from [NHANES (medical parameters)](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory) and [ICD datasources (disease clarification)](https://icd.who.int/browse/2025-01/mms/en). 
+Disease and available medical parameter data is loaded in the project and each separate disease is assesed via ChatGPT API iteratively, achieving greater precision. Used AI model is ```gpt-4o-mini``` (might be a subject of change further on), with temperature parameter set to "0.0" resulting in strict & predictable data. Input Data is in specific .csv format loaded, scraped from [NHANES (medical parameters)](https://wwwn.cdc.gov/nchs/nhanes/search/datapage.aspx?Component=Laboratory) and [ICD datasources (disease clarification)](https://icd.who.int/browse/2025-01/mms/en). 
 
 After each assesment output is generated in ```out/results_all.csv, results_not_possible.csv, results_possible```. Specifically basic disease data is stored and medical reasoning behind the approach (depending of likelyhood possibility state).
 
   
 ## Usage
 1) Install required Python dependencies
-2) Use existing or modify input data (```icd_codes.csv, nhanes_variables.csv```)
-2) As [OpenAI API](https://platform.openai.com/docs/overview) is used, you need to store the API key in the environment variables of your PC (or modify the code for straight injection in code, or any other way fetching the key really).  
-  
+2) By default script uses existing input data (```input/icd_codes.csv, nhanes_variables.csv```), modify for your needs if needed
+3) As [OpenAI API](https://platform.openai.com/docs/overview) is used, you need to store the API key in the environment variables of your PC (or modify the code for straight injection in code, or any other way fetching the key really).  
+
    a) Windows =>```setx OPENAI_API_KEY "<your_api_key>"```  
    b) Linux or macOs => ```export OPENAI_API_KEY="<your_api_key>"```
+4) *Optional: if needed, refine the config parameters in ```config.py```, e.g. change the used OpenAI LLM model*
+5) Execute the ```main.py```
 
-  
+
 ## Output result example
 
 | Code    | Parent Code | Name                                                        | Possibility   | Medical Reasoning                                                                                                                                                                                                                                                                           |
@@ -33,7 +35,7 @@ After each assesment output is generated in ```out/results_all.csv, results_not_
 | 3A00.01  | 3A00       | Chronic posthaemorrhagic anaemia                           | Possible      | Key hematological parameters such as hemoglobin (LBXHGB), hematocrit (LBXHCT), red blood cell count (LBXRBCSI), and red cell distribution width (LBXRDW) are available, which are essential for screening chronic posthaemorrhagic anemia. These features can help assess anemia severity and differentiate it from other types of anemia. |
 | 3B50.1   | 3B50       | Congenital plasminogen activator inhibitor type 1 deficiency | Not Possible  | Key signals for screening congenital plasminogen activator inhibitor type 1 deficiency, such as specific genetic testing or functional assays to measure plasminogen activator inhibitor levels, are not available in the listed features.                                                                                         |
 
-[**View full data**](./out/results_all.csv)
+[**View full data**](output/results_all.csv)
 
   
 ## Contributing
