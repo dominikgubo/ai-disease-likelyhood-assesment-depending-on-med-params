@@ -7,10 +7,7 @@ if __name__ == "__main__":
     print("🔍 Starting NHANES-informed ICD Likelihood Assessor (feature-availability mode)...")
 
     nhanes_features = load_nhanes_features(NHANES_CSV_PATH)
-    print(f"Loaded {len(nhanes_features)} NHANES parameters, from: {NHANES_CSV_PATH}")
-
     icd_df = load_icd(ICD_CSV_PATH)
-    print(f"Loaded {len(icd_df)} ICD entries, from: {ICD_CSV_PATH}")
 
     if DISEASE_SCOPE_LIMIT is not None:
         icd_df = icd_df.head(DISEASE_SCOPE_LIMIT)

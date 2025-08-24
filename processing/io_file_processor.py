@@ -2,7 +2,7 @@ import os
 from typing import List, Dict
 import pandas as pd
 
-from config import OUTPUT_DIR
+from config import OUTPUT_DIR, ICD_CSV_PATH, NHANES_CSV_PATH, USE_DISEASE_DESCRIPTION
 
 
 def load_nhanes_features(nhanes_csv: str) -> List[Dict[str, str]]:
@@ -20,17 +20,24 @@ def load_nhanes_features(nhanes_csv: str) -> List[Dict[str, str]]:
     if not features:
         raise ValueError("No NHANES features found in the provided CSV.")
 
+    print(f"Loaded {len(features)} NHANES parameters, from: {NHANES_CSV_PATH}")
+
     return features
 
-def load_icd(icd_csv: str) -> pd.DataFrame:
+def load_icd(icd_csv: str):
     try:
         df = pd.read_csv(icd_csv, dtype=str, on_bad_lines="skip").fillna("")
     except Exception as e:
         raise ValueError(f"Error reading ICD CSV: {e}")
 
     required = {"code", "parent_code", "name"}
+    required = {"code", "parent_code", "name","disease_description"} if USE_DISEASE_DESCRIPTION == True else required
+
     if not required.issubset(df.columns):
         raise ValueError(f"ICD CSV missing required columns: {required - set(df.columns)}")
+
+    print(f"Loaded {len(df)} ICD entries, from: {ICD_CSV_PATH}")
+
     return df
 
 def write_csv_result_file(file_name: str, row_list: list[str]):

@@ -40,21 +40,21 @@ def append_all_disease_assessment_status(icd_dataframe: DataFrame, nhanes_featur
         code = (row["code"]).strip()
         parent_code = (row["parent_code"]).strip()
         name = (row["name"]).strip()
+        disease_description = (row["disease_description"]).strip() if USE_DISEASE_DESCRIPTION == True else ""
     
         print(f"[{idx}/{len(icd_dataframe)}] Assessing ICD {code} — {name} ...")
     
         user_prompt = USER_PROMPT_TEMPLATE.format(
-            code=code, parent_code=parent_code, name=name, features_json=medical_parameters_json
+            code=code, parent_code=parent_code, name=name, disease_description=disease_description, parameters_json=medical_parameters_json
         )
-    
+
         try:
             possibility, medical_reasoning = fetch_disease_possibility_and_reasoning_values(client, user_prompt)
     
         except Exception as e:
             print(f"   ❌ API error: {e}")
             possibility, medical_reasoning = "Not Possible", f"API error: {e}"
-    
-        common_columns = {"code": code, "parent_code": parent_code, "name": name, "medical_reasoning": medical_reasoning}
+        common_columns = {"code": code, "parent_code": parent_code, "name": name, "disease_description": disease_description, "medical_reasoning": medical_reasoning}
         all_rows.append({**common_columns, "possibility": possibility})
         if possibility == "Possible":
             possible_rows.append(common_columns)
