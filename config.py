@@ -8,6 +8,9 @@ OUTPUT_DIR = os.path.join(SCRIPT_DIR, "output")
 # DISEASE_SCOPE_LIMIT if value is present processes first variable value number of ICD diseases
 # e.g. DISEASE_SCOPE_LIMIT = 20 would process first 20 ICD diseases in the .csv input file
 DISEASE_SCOPE_LIMIT = None
+# USE_DISEASE_DESCRIPTION if value 'True' and description is present, it provides
+# disease description context to the queried OpenAI API
+USE_DISEASE_DESCRIPTION = False
 # API_KEY used for accessing OpenAI APi, is stored within system environment variables by default
 # if needed this logic can be changed depending on the need, e.g. fetch key from the external service
 API_KEY = os.environ.get("OPENAI_API_KEY")
@@ -44,7 +47,8 @@ USER_PROMPT_TEMPLATE = (
     "ICD code: {code}\n"
     "ICD parent code: {parent_code}\n"
     "Disease name: {name}\n\n"
-    "AVAILABLE NHANES FEATURES (no patient values):\n"
-    "{features_json}\n\n"
+    "Disease description (if empty then not present): {disease_description}\n\n"
+    "AVAILABLE NHANES PARAMETER FEATURES (no patient values):\n"
+    "{parameters_json}\n\n"
     "Decide feasibility strictly based on the features above (names and units only)."
 )
